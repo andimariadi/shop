@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
+  slideOpts = {
+    initialSlide: 1.6,
+    slidesPerView: 2,
+    loop: true,
+    centeredSlides: true,
+    autoplay:true,
+  };
+  
   constructor() {}
 
 }

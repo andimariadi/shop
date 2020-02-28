@@ -24,3 +24,19 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.circle-div {
+    padding: 15px;
+    border-radius: 100%;
+    text-align: center;
+    background-color: var(--ion-color-primary);
+    color: var(--ion-color-primary-contrast);
+}
+
+.gradient-background {
+    background-image: linear-gradient(90deg, rgba(230, 126, 34,1.0), rgba(243, 156, 18,1.0)) !important;
+}
+
+.small {
+    font-size: 12px;
+}
