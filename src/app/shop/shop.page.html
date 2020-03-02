@@ -5,5 +5,38 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-segment scrollable value="heart">
+    <ion-segment-button value="home">
+      TAB 1
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      TAB 2
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      TAB 3
+    </ion-segment-button>
+    <ion-segment-button value="star">
+      TAB 4
+    </ion-segment-button>
+    <ion-segment-button value="call">
+      TAB 5
+    </ion-segment-button>
+    <ion-segment-button value="globe">
+      TAB 6
+    </ion-segment-button>
+    <ion-segment-button value="basket">
+      TAB 7
+    </ion-segment-button>
+  </ion-segment>
+        <ion-item>
+          <ion-label>Pilih tanggal</ion-label>
+          <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Pilih tanggal"></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label>Filter By:</ion-label>
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
 </ion-content>

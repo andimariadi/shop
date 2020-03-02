@@ -1,9 +1,26 @@
-<ion-header>
+<ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-text-center">
+  <div class="list-login">
+    <!-- <img src="assets/icon/logo-operation.png" /> -->
+    <h1>Login</h1>
+    <div *ngIf="failed" class="notif" [innerHTML]="msg"></div>
+    <ion-list lines="inset">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="round" (click)="submit()">Login</ion-button>
+    <ion-button expand="round" [routerLink]="['/register']">Register</ion-button>
+  </div>
 </ion-content>

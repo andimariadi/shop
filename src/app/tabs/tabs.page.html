@@ -1,33 +1,33 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home" size="large"></ion-icon>
+    <ion-tab-button tab="home" *ngIf="!logged">
+      <ion-img src="assets/icon/home.png" class="mini-icon"></ion-img>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="home-logged">
-      <ion-icon name="home" size="large"></ion-icon>
+    <ion-tab-button tab="home-logged" *ngIf="logged">
+      <ion-img src="assets/icon/home.png" class="mini-icon"></ion-img>
       <ion-label>Home</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="pesanan">
-      <ion-icon name="basket" size="large"></ion-icon>
+      <ion-img src="assets/icon/supermarket.png" class="mini-icon"></ion-img>
       <ion-label>Pesanan</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="shop">
-      <ion-icon name="cart" size="large"></ion-icon>
+      <ion-img src="assets/icon/supermarkets.png" class="mini-icon"></ion-img>
       <ion-label>Shop</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="inbox">
-      <ion-icon name="mail" size="large"></ion-icon>
+      <ion-img src="assets/icon/mail.png" class="mini-icon"></ion-img>
       <ion-label>Inbox</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="account">
-      <ion-icon name="person" size="large"></ion-icon>
+      <ion-img src="assets/icon/job.png" class="mini-icon"></ion-img>
       <ion-label>Akun</ion-label>
     </ion-tab-button>
   </ion-tab-bar>

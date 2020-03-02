@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  logged: Boolean = false;
+  constructor(
+  private storage: Storage
+  ) {
+      
+  }
+
+  async ionViewDidEnter() {
+    this.logged = await this.storage.get('login');
+  }
 
 }

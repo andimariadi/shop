@@ -1,0 +1,20 @@
+.list-md {
+    width: 80%;
+}
+
+.center-screen, .list-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100%;
+  }
+  
+  
+  .notif {
+    background-color: #c34f4f;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 6px;
+  }

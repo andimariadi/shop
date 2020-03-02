@@ -1,9 +1,35 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="warning">
     <ion-title>Akun</ion-title>
+    <ion-buttons slot="end" *ngIf="logged">      
+      <ion-button (click)="logout()">
+        <ion-icon name="exit"></ion-icon> 
+        Logout
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <div *ngIf="!logged">
+    <ion-text>Anda belum memiliki Akun!</ion-text>
+    <br>
+    <ion-chip color="primary" [routerLink]="['/register']" outline="true">
+      <ion-label>Register</ion-label>
+    </ion-chip>
+    <ion-chip [routerLink]="['/login']">
+      <ion-label>Login</ion-label>
+    </ion-chip>
+  </div>
+  <ion-grid *ngIf="logged">
+    <ion-row>
+      <ion-col col-4>Nama</ion-col>
+      <ion-col col-8>:</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>Email</ion-col>
+      <ion-col col-8>:</ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

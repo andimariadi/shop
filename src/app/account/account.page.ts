@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPage implements OnInit {
 
-  constructor() { }
+  logged: Boolean = false;
+  constructor(
+    private storage: Storage,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  async ionViewDidEnter() {
+    this.logged = await this.storage.get('login');
+  }
+
+  async logout() {
+    this.storage.clear();
+    this.router.navigate(['/tabs/home']);
   }
 
 }
