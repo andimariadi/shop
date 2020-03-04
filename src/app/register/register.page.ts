@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -34,12 +34,15 @@ export class RegisterPage implements OnInit {
       this.success = false;
       this.msg = '<strong>Error!</strong> Password tidak sesuai.';
     }
-    let postdata = new FormData();
+    let postdata = new URLSearchParams();
     postdata.append('f_user_fullname', this.data.fullname);
     postdata.append('f_user_name', this.data.username);
     postdata.append('f_user_email', this.data.email);
     postdata.append('f_user_password', this.data.password);
-    this.http.post( environment.url + 'login/register', postdata).subscribe(data => {
+    let options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    };
+    this.http.post( environment.url + 'login/register', postdata.toString(), options).subscribe(data => {
       this.temp = data;
       loading.dismiss();
       if(this.temp.success == true) {

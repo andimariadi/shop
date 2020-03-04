@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -32,10 +32,13 @@ export class LoginPage implements OnInit {
       message: "Please wait..."
     });
     await loading.present();
-    let postdata = new FormData();
+    let postdata = new URLSearchParams();
     postdata.append('f_user_email', this.username);
     postdata.append('f_user_password', this.password);
-    this.http.post( environment.url + 'login/process', postdata).subscribe(data => {
+    let options = {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    };
+    this.http.post( environment.url + 'login/process', postdata.toString(), options).subscribe(data => {
       this.temp = data;
       loading.dismiss();
       if(this.temp.success == true) {
